@@ -44,6 +44,7 @@
     /* Responsive Drag */
     .paper {
       touch-action: none;
+      position: absolute;
     }
   </style>
 </head>
@@ -128,6 +129,7 @@
       let offsetX, offsetY, isDragging = false;
 
       paper.addEventListener("touchstart", (e) => {
+        e.preventDefault();
         const touch = e.touches[0];
         offsetX = touch.clientX - paper.getBoundingClientRect().left;
         offsetY = touch.clientY - paper.getBoundingClientRect().top;
